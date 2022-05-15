@@ -12,9 +12,9 @@ const Matches = ({ data }) => {
       </p>
       <div className="flex justify-center divide-x grid md:grid-cols-2">
         {data.matches?.map((match, index) => (
-          <div key={match.id} className="flex justify-between divide-x w-full py-3 mx-3 border-b-2 px-2 matches-card">
+          <div key={match.id} className="flex justify-between  w-full py-3 mx-3 border-b-2 px-2 matches-card">
             
-              <div className="divide-x ">
+              <div className=" ">
               
                 <div>
                   <div className="flex my-4">
