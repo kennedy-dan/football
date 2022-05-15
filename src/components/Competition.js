@@ -14,10 +14,8 @@ const Competition = ({ match }) => {
   const [activeTab, setactiveTab] = useState(true);
 
   const { name } = dat;
-  console.log(dat.currentSeason);
   const matchday = dat.currentSeason?.currentMatchday;
   const newd = Number(matchday);
-  console.log(newd);
 
   useEffect(() => {
     const reqOptions = {
@@ -49,7 +47,7 @@ const Competition = ({ match }) => {
         "X-Auth-Token": "c8e7e31d3f014e2bb8f5e0d783d4ee8b",
       },
     };
-    setIsLoading(false);
+    setIsLoading(true);
 
     fetch(
       `https://api.football-data.org/v2/competitions/${id}/matches?season=2021&matchday=${newd}`,
@@ -57,6 +55,9 @@ const Competition = ({ match }) => {
     )
       .then((response) => response.json())
       .then((json) => setMatches(json));
+
+    setIsLoading(false);
+
   };
 
   const handleStandings = () => {
@@ -115,21 +116,14 @@ const Competition = ({ match }) => {
                   <Matches data={matches} />
                 </div>
               ) : (
-                <div className="flex md:justify-center   shadow-xl mt-5 overflow-x-hidden">
-                  <div className=" flex justify-center  h-42 shadow-xl overflow-x-auto  uyut">
+                <div className="flex md:justify-center   mt-5 overflow-x-hidden">
+                  <div className=" flex justify-center  h-42 shadow-xl overflow-x-auto  manage-width">
                     <StandingsTable name={name} id={id} />
                   </div>
                 </div>
               )}
             </>
           )}
-
-          {/* <div className="flex justify-center mt-5">
-          
-          <div className=" flex justify-center shadow-xl h-42 uyut">
-            {displayComponent ? <Matches data={matches}/> : <StandingsTable name={name} id={id}/>}
-          </div>
-        </div> */}
         </div>
       </div>
     </div>

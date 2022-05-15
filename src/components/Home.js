@@ -30,13 +30,12 @@ const Home = () => {
     setIsLoading(false);
   }, []);
 
-  console.log(isLoading);
 
   return (
     <div className="">
       <BackgroundImage />
       <div className="flex justify-center  ">
-        <div className=" xl:w-6/12 border   border-slate-200 rounded bg-white -mt-12 popyy">
+        <div className=" xl:w-6/12 border   border-slate-200 rounded bg-white -mt-12 all-comp">
           <p className="text-left font-semibold text-2xl mx-3 pt-5">
             All Competitions
           </p>

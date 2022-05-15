@@ -1,4 +1,7 @@
-.uyut {
+.manage-width {
     width: 96%;
 }
-
+.uefa-card {
+    box-shadow: 4px 4px 19px 12px rgb(0 0 0 / 0.05);
+    /* background-color: red; */
+}

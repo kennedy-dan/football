@@ -5,7 +5,7 @@ import logoImg from "../../assets/logo.footbal.png";
 
 const BackgroundImage = () => {
   return (
-    <div>   <div className="h-72 ioi">
+    <div>   <div className="h-72 ">
     <img src={footballImg} alt="background" className="object-cover h-full w-full" />
     <div className="flex justify-center">
       <img src={logoImg} alt="background" className="-mt-60" />
