@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import TableHead from "./TableHead";
 import "./StandingsTable.css";
 const StandingsTable = (props) => {
   const { name, id } = props;
@@ -33,83 +34,9 @@ const StandingsTable = (props) => {
         <div className=" shadow-xl md:ml-0 ml-60">
           {StandingsData.standings?.map((standing) => (
             <div key={standing.id} className="my-0 uefa-card rounded-lg">
+              <p className="ml-5 pt-4 font-semibold">{standing.group}</p>
               <table className="my-5">
-                <thead className="">
-                  <tr>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500  tracking-wider"
-                    >
-                      <div className="flex justify-between">
-                        <p className="table-name"></p>
-                      </div>
-                    </th>
-                    <th
-                      scope="col"
-                      className=" py-3 text-left text-xs font-medium text-gray-500  tracking-wider"
-                    >
-                      <div className="flex justify-between">
-                        <p className="text-base font-bold">Team</p>
-                      </div>
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      <div className="flex justify-between">
-                        <p className="text-base font-bold">MP</p>
-                      </div>
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      <div className="flex justify-between">
-                        <p className="text-base font-bold">W</p>
-                      </div>
-                    </th>{" "}
-                    <th
-                      scope="col"
-                      className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      <div className="flex justify-between">
-                        <p className="text-base font-bold">D</p>
-                      </div>
-                    </th>{" "}
-                    <th
-                      scope="col"
-                      className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      <div className="flex justify-between">
-                        <p className="text-base font-semibold">L</p>
-                      </div>
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      <div className="flex justify-between">
-                        <p className="text-base font-bold">GF</p>
-                      </div>
-                    </th>{" "}
-                    <th
-                      scope="col"
-                      className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      <div className="flex justify-between">
-                        <p className="text-base font-bold">GA</p>
-                      </div>
-                    </th>{" "}
-                    <th
-                      scope="col"
-                      className="px-5 py-3 text-left text-xs font-medium text-gray-500  tracking-wider"
-                    >
-                      <div className="flex justify-between">
-                        <p className="text-base font-bold">Pts</p>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
+                <TableHead />
                 <tbody className="bg-white divide-y divide-gray-200 ">
                   {standing?.table?.map((table) => (
                     <>
@@ -158,86 +85,12 @@ const StandingsTable = (props) => {
         </div>
       ) : (
         <table className="md:ml-0 ml-64 divide-y divide-gray-200">
-          <thead className="">
-            <tr>
-              <th
-                scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500  tracking-wider"
-              >
-                <div className="flex justify-between">
-                  <p className="table-name"></p>
-                </div>
-              </th>
-              <th
-                scope="col"
-                className=" py-3 text-left text-xs font-medium text-gray-500  tracking-wider"
-              >
-                <div className="flex justify-between">
-                  <p className="text-base font-bold">Team</p>
-                </div>
-              </th>
-              <th
-                scope="col"
-                className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                <div className="flex justify-between">
-                  <p className="text-base font-bold">MP</p>
-                </div>
-              </th>
-              <th
-                scope="col"
-                className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                <div className="flex justify-between">
-                  <p className="text-base font-bold">W</p>
-                </div>
-              </th>{" "}
-              <th
-                scope="col"
-                className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                <div className="flex justify-between">
-                  <p className="text-base font-bold">D</p>
-                </div>
-              </th>{" "}
-              <th
-                scope="col"
-                className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                <div className="flex justify-between">
-                  <p className="text-base font-semibold">L</p>
-                </div>
-              </th>
-              <th
-                scope="col"
-                className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                <div className="flex justify-between">
-                  <p className="text-base font-bold">GF</p>
-                </div>
-              </th>{" "}
-              <th
-                scope="col"
-                className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                <div className="flex justify-between">
-                  <p className="text-base font-bold">GA</p>
-                </div>
-              </th>{" "}
-              <th
-                scope="col"
-                className="px-5 py-3 text-left text-xs font-medium text-gray-500  tracking-wider"
-              >
-                <div className="flex justify-between">
-                  <p className="text-base font-bold">Pts</p>
-                </div>
-              </th>
-            </tr>
-          </thead>
+                      <TableHead />
+
           <tbody className="bg-white divide-y divide-gray-200 ">
             {StandingsData?.standings?.map((standing) => (
               <>
-                {standing.table.map(( table) => (
+                {standing.table.map((table) => (
                   <tr key={table.id} className="">
                     <td className="pl-5 py-4 text-base font-semibold">
                       <p>{table.position}</p>

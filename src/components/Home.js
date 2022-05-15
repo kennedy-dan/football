@@ -28,7 +28,7 @@ const Home = () => {
       .then((json) => setcompetitions(json));
 
     setIsLoading(false);
-  }, []);
+  }, [isLoading]);
 
 
   return (

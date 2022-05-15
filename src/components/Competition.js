@@ -33,7 +33,7 @@ const Competition = ({ match }) => {
       .then((response) => response.json())
       .then((json) => setcompetition(json));
     setIsLoading(false);
-  },[id] );
+  },[id, isLoading] );
 
   const handleMatches = () => {
     setIsLoading(true);

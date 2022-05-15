@@ -1,6 +1,7 @@
 import React from "react";
 import home from "../../assets/home.png";
 import away from "../../assets/away.png";
+import './Matches.css'
 const Matches = ({ data }) => {
   
 
@@ -9,12 +10,11 @@ const Matches = ({ data }) => {
       <p className="text-xl font-semibold my-4 px-3">
         MatchWeek {data.filters?.matchday}
       </p>
-      {/* <p>{date}</p> */}
       <div className="flex justify-center divide-x grid md:grid-cols-2">
         {data.matches?.map((match, index) => (
-          <div key={match.id} className="flex justify-between divide-x w-full py-3 mx-3 border-b-2 px-2">
+          <div key={match.id} className="flex justify-between divide-x w-full py-3 mx-3 border-b-2 px-2 matches-card">
             
-              <div className="divide-x">
+              <div className="divide-x ">
               
                 <div>
                   <div className="flex my-4">
@@ -23,7 +23,7 @@ const Matches = ({ data }) => {
                       <p className="text-xs font-semibold ml-3">
                         {match.homeTeam.name}
                       </p>
-                      <p>{match.score.fullTime.homeTeam}</p>
+                      <p className={`${match.score.fullTime.homeTeam === match.score.fullTime.awayTeam ? 'text-black' :  match.score.fullTime.homeTeam > match.score.fullTime.awayTeam ? 'text-green-700': ''} `}>{match.score.fullTime.homeTeam}</p>
                     </div>
                   </div>
                   <div className="flex">
@@ -33,7 +33,7 @@ const Matches = ({ data }) => {
                     <p className="text-xs font-semibold ml-3">
                       {match.awayTeam.name}
                     </p>
-                    <p>{match.score.fullTime.awayTeam}</p>
+                    <p className={`${match.score.fullTime.homeTeam === match.score.fullTime.awayTeam ? 'text-black' :  match.score.fullTime.awayTeam  > match.score.fullTime.homeTeam ? 'text-green-700': ''} `}>{match.score.fullTime.awayTeam}</p>
                   </div>
                   </div>
                 </div>
