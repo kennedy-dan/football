@@ -29,7 +29,7 @@ const Competition = ({ match }) => {
 
     setIsLoading(true);
 
-    fetch(`https://api.football-data.org/v2/competitions/${id}`, reqOptions)
+    fetch(`https://api.football-data.org/v4/competitions/${id}`, reqOptions)
       .then((response) => response.json())
       .then((json) => setcompetition(json));
     setIsLoading(false);

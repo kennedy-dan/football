@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import axios from 'axios'
 import { Link } from "react-router-dom";
 import BackgroundImage from "./UI/BackgroundImage";
 
@@ -13,16 +13,17 @@ const Home = () => {
     const reqOptions = {
       method: "GET",
       headers: {
-        "Content-Length": 0,
-        "Content-Type": "text/plain",
-        "X-Auth-Token": "c8e7e31d3f014e2bb8f5e0d783d4ee8b",
+        // "Content-Length": 0,
+        "Content-Type": "application/json",
+       'Access-Control-Allow-Origin': "*" 
+        // "X-Auth-Token": "c8e7e31d3f014e2bb8f5e0d783d4ee8b",
       },
     };
     setIsLoading(true);
 
-    fetch(
-      "https://api.football-data.org/v2/competitions?areas=2077&plan=TIER_ONE",
-      reqOptions
+    axios.get(
+      "https://api.football-data.org/v4/competitions?areas=2077&plan=TIER_ONE"
+    
     )
       .then((response) => response.json())
       .then((json) => setcompetitions(json));

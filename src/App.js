@@ -7,13 +7,11 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div>
-    <Routes>
-        
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/competition/:id" element={<Competition />} />
-        
-    </Routes>
-    <Footer />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/competition/:id" element={<Competition />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
